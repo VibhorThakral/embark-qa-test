@@ -5,12 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embark QA Prospect Test</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    jQuery.post("https://dev-rhodes.embark.com/embeddedProspects/htmlForm/rhodes/kishQA", {}, function(data) {
+      jQuery("#inquiryForm").html(data);
+    });
+
+    jQuery.post("https://dev-rhodes.embark.com/embeddedProspects/form/rhodes/kishQA", {}, function(data) {
+      jQuery("#inquiryForm").html(data);
+    });
+  </script>
 </head>
 
 <body>
   <h1>Iframe</h1>
   <iframe src="https://dev-rhodes.embark.com/embedded/kishQA" name="emailFrame" title="Receive Email Updates"
     style="border:none; height: 550px; width: 100%" loading="eager"></iframe>
+
+  <h1>Embedded</h1>
+
+  <div id="inquiryForm" style="height: 900px;"></div>
 </body>
+
+
 
 </html>
